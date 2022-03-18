@@ -1,0 +1,6 @@
+# project
+node_modules
+/lib
+
+# system ignore
+.DS_Strore

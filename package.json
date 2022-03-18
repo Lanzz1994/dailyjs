@@ -1,0 +1,58 @@
+{
+  "name": "dailyjs",
+  "version": "1.0.0",
+  "description": "often using code on working",
+  "private": false,
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "jest --config jestconfig.json",
+    "pre-commit": "npm run lint:fix && git add .",
+    "build": "rm -fr lib && set NODE_ENV=production && npm run lint:fix && rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lanzz1994/dailyjs.git"
+  },
+  "keywords": [
+    "tool",
+    "util",
+    "typescript"
+  ],
+  "author": "lzz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lanzz1994/dailyjs/issues"
+  },
+  "homepage": "https://github.com/Lanzz1994/dailyjs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.70.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.6.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
